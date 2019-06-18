@@ -1,7 +1,0 @@
-com/bbva/selenium/form/SeleniumGridPage.class
-com/bbva/selenium/driver/Wait.class
-com/bbva/selenium/form/SeleniumGridPageSteps.class
-com/bbva/selenium/driver/TearDown.class
-com/bbva/selenium/driver/Setup.class
-com/bbva/selenium/SeleniumGridTest.class
-com/bbva/selenium/basepage/BasePage.class
