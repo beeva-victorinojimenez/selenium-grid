@@ -13,15 +13,11 @@ public class DriverUtil {
 
     public static WebDriver getDriver(final String browser) throws MalformedURLException {
 
-        switch (browser) {
-            case "firefox":
-                System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, "/dev/null");
-                return new RemoteWebDriver(new URL(String.format("http://%s:4444/wd/hub", System.getenv("HOST_HUB"))), DesiredCapabilities.firefox());
-            case "chrome":
-                return new RemoteWebDriver(new URL(String.format("http://%s:4444/wd/hub", System.getenv("HOST_HUB"))), new ChromeOptions());
+        String width = System.getProperty("width");
+        String height = System.getProperty("height");
+        String hubIp = System.getenv("HOST_HUB");
 
-        }
-        return null;
+        //TODO create remote driver
     }
 
 }

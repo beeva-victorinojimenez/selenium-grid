@@ -19,24 +19,11 @@ public class Setup {
     @Before
     public void setWebDriver() throws Exception {
 
-        final String capability;
-
-        capability = System.getProperty("browser");
-        switch (capability) {
-            case "firefox":
-
-                System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, "/dev/null");
-                driver = new RemoteWebDriver(new URL(String.format("http://%s:4444/wd/hub", System.getenv("HOST_HUB"))), DesiredCapabilities.firefox());
-                break;
-            case "chrome":
-                driver = new RemoteWebDriver(new URL(String.format("http://%s:4444/wd/hub", System.getenv("HOST_HUB"))), new ChromeOptions());
-                break;
-        }
-
+        
+        final String browser = System.getProperty("browser");
         String width = System.getProperty("width");
         String height = System.getProperty("height");
-        if (width != null && height != null) {
-            driver.manage().window().setSize(new Dimension(Integer.valueOf(width), Integer.valueOf(height)));
-        }
+        String hubIp = System.getenv("HOST_HUB");
+        //TODO create remote driver
     }
 }
