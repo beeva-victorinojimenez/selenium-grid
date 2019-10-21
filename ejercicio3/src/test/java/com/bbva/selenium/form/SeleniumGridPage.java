@@ -10,8 +10,6 @@ import org.openqa.selenium.support.PageFactory;
 
 public class SeleniumGridPage extends BasePage {
 
-    //private static final String HOME_PAGE_URL = "https://www.google.";
-
     @FindBy(css = ".hello")
     private WebElement form;
 

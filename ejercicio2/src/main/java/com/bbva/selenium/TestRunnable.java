@@ -24,19 +24,25 @@ public class TestRunnable implements Runnable {
         } catch (final MalformedURLException e) {
             System.err.println("Invalid url");
         }
-        driver.get("https://www.bbvanexttechnologies.com/");
-        final WebElement btnContact = driver.findElement(By.cssSelector("a[data-default-url='#collapse4']"));
-        btnContact.click();
-        final WebElement h1Contacto = driver.findElement(By.cssSelector("h1"));
-        if (h1Contacto.isDisplayed() && h1Contacto.getText().equalsIgnoreCase("contacto")) {
-            System.out.println("Contacto encontrado en " + ((System.currentTimeMillis() - startTime) / 1000) + " segundos");
+        driver.get("https://www.seleniumhq.org/");
+
+        final WebElement btnProjects = driver.findElement(By.cssSelector("li#menu_projects > a"));
+
+        btnProjects.click();
+        final WebElement h2Projects = driver.findElement(By.cssSelector("h2"));
+        if (h2Projects.isDisplayed() && h2Projects.getText().equalsIgnoreCase("Selenium Projects")) {
+            System.out.println("Projects encontrado en " + ((System.currentTimeMillis() - startTime) / 1000) + " segundos");
         }
-        final WebElement btnBlog = driver.findElement(By.cssSelector("a[data-default-url='#collapse3']"));
-        btnBlog.click();
-        final WebElement h1Blog = driver.findElement(By.cssSelector("h1"));
-        if (h1Blog.isDisplayed() && h1Blog.getText().equalsIgnoreCase("blog")) {
-            System.out.println("Blog encontrado en " + ((System.currentTimeMillis() - startTime) / 1000) + " segundos");
+
+        final WebElement btnDownloads = driver.findElement(By.cssSelector("li#menu_download > a"));
+
+        btnDownloads.click();
+        final WebElement h2Downloads = driver.findElement(By.cssSelector("h2"));
+        if (h2Downloads.isDisplayed() && h2Downloads.getText().equalsIgnoreCase("Downloads")) {
+            System.out.println("Downloads encontrado en " + ((System.currentTimeMillis() - startTime) / 1000) + " segundos");
         }
+
+
         driver.quit();
     }
 }
