@@ -3,7 +3,7 @@ Feature: Test the form funcionality
 
 
  Background: User navigation to url
-    Given User navigation to http://10.23.27.196:8080
+    Given User navigation to http://front:80
 
  Scenario Outline: the user must be able to fill in the form
    Given user is on the form page

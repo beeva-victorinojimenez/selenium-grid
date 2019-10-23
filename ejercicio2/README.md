@@ -7,7 +7,7 @@ En caso de ejecutarlo desde el id intriducirla en las variables de ejecución
 ##### 3 Lanzar la prueba con un unico navegador
 ```
 mvn compile
-mvn exec:java -Dexec.mainClass="com.bbva.selenium.Main" 
+mvn exec:java -Dexec.mainClass="com.bbva.selenium.Main" -Dexec.cleanupDaemonThreads=false
 ```
 Obtener el tiempo total d la prueba
 
